@@ -13,9 +13,12 @@
         <java.version>14</java.version>
         <jmh.version>1.19</jmh.version>
         <maven-assembly-plugin.version>3.2.0</maven-assembly-plugin.version>
+        <junit-jupiter-engine.version>5.6.2</junit-jupiter-engine.version>
+        <junit-platform-launcher.version>1.6.2</junit-platform-launcher.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <jol-core.version>0.10</jol-core.version>
     </properties>
 
     <dependencies>
@@ -28,6 +31,25 @@
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-generator-annprocess</artifactId>
             <version>${jmh.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>${jol-core.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform-launcher.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
