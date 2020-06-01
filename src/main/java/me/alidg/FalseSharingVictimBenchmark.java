@@ -13,6 +13,7 @@ import static org.openjdk.jmh.annotations.Mode.AverageTime;
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class FalseSharingVictimBenchmark {
 
+    private static final ContendedCounter contended = new ContendedCounter();
     private static final SimpleCounter simple = new SimpleCounter();
     private static final Padded8Counter padded8 = new Padded8Counter();
     private static final Padded7Counter padded7 = new Padded7Counter();
@@ -29,6 +30,12 @@ public class FalseSharingVictimBenchmark {
     @BenchmarkMode(AverageTime)
     public long simple() {
         return simple.inc(id.get() % 8);
+    }
+
+    @Benchmark
+    @BenchmarkMode(AverageTime)
+    public long contended() {
+        return contended.inc(id.get() % 8);
     }
 
     @Benchmark
